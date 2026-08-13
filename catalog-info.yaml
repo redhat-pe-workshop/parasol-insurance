@@ -1,0 +1,60 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: parasol-insurance
+  description: Parasol Insurance claims management application
+  annotations:
+    backstage.io/kubernetes-id: parasol-insurance
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/name=parasol-insurance
+    janus-idp.io/tekton: parasol-insurance
+    jira/project-key: PARASOL
+    quay.io/repository-slug: parasol/parasol-insurance
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/claims-engineering
+  system: claims-assessment-system
+  domain: claims
+  providesApis:
+    - parasol-insurance-api
+  consumesApis: []
+  dependsOn:
+    - resource:default/kafka-cluster
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: parasol-insurance-api
+  description: REST API for managing insurance claims
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:default/claims-engineering
+  system: claims-assessment-system
+  definition: |
+    openapi: "3.0.0"
+    info:
+      title: Parasol Insurance Claims API
+      version: "1.0"
+    paths:
+      /api/claims:
+        get:
+          summary: List all claims
+      /api/claims/{claimNumber}:
+        get:
+          summary: Get a claim by number
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: kafka-cluster
+  description: Shared Kafka cluster (AMQ Streams)
+  tags:
+    - kafka
+    - amq-streams
+spec:
+  type: kafka-cluster
+  lifecycle: production
+  owner: group:default/parasol-platform-engineering
+  system: api-gateway-system
+  domain: platform-engineering
