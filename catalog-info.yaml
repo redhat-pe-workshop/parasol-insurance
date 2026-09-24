@@ -9,6 +9,7 @@ metadata:
     janus-idp.io/tekton: parasol-insurance
     jira/project-key: PARASOL
     quay.io/repository-slug: parasol/parasol-insurance
+    sonarqube.org/project-key: parasol-insurance
 spec:
   type: service
   lifecycle: production
