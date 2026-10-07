@@ -4,6 +4,8 @@ metadata:
   name: parasol-insurance
   description: Parasol Insurance claims management application
   annotations:
+    argocd/app-selector: rhdh.redhat.com/app-name=parasol-insurance
+    argocd/instance-name: apps
     backstage.io/kubernetes-id: parasol-insurance
     backstage.io/kubernetes-label-selector: app.kubernetes.io/name=parasol-insurance
     janus-idp.io/tekton: parasol-insurance
