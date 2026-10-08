@@ -12,7 +12,7 @@
 			"ms-kubernetes-tools.vscode-kubernetes-tools",
 			"streetsidesoftware.code-spell-checker",
 			"sst-dev.opencode",
-			"zoocodeorganization.zoo-code",
+			"kilocode.kilo-code",
 			"cnshenj.vscode-task-manager",
             "redhat.java",
             "redhat.vscode-quarkus",
@@ -25,7 +25,6 @@
 		"java.server.launchMode": "Standard",
 		"java.configuration.updateBuildConfiguration": "automatic",
 		"java.compile.nullAnalysis.mode": "automatic",
-		"zoo-code.autoImportSettingsPath": "/projects/zoo-code-settings.json",
 		"chat.disableAIFeatures": true
 	}
 }
