@@ -38,6 +38,9 @@ components:
           exposure: none
           secure: false
           protocol: tcp
+        - name: kilo-code
+          targetPort: 4096
+          exposure: none
   - name: prep-workspace
     container:
       args:

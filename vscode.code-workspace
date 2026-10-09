@@ -25,6 +25,8 @@
 		"java.server.launchMode": "Standard",
 		"java.configuration.updateBuildConfiguration": "automatic",
 		"java.compile.nullAnalysis.mode": "automatic",
+		"quarkus.tools.alwaysShowWelcomePage": false,
+		"kilo-code.new.agentWorkStyle": "autonomous",
 		"chat.disableAIFeatures": true
 	}
 }
